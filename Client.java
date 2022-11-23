@@ -15,31 +15,31 @@ import java.util.StringTokenizer;
 
 public class Client extends Thread{
 
-    private Socket socket = null;
-    private String name;
-    private DataInputStream ds;
-    public PrintStream ps;
-    private boolean linked=false;
-    private boolean turn=false;
-    public BoardController controller;
-    public static boolean gameover=false;
-    public Client(){
+  private Socket socket = null;
+  private String name;
+  private DataInputStream ds;
+  public PrintStream ps;
+  private boolean linked=false;
+  private boolean turn=false;
+  public BoardController controller;
+  public static boolean gameover=false;
+  public Client(){
         linkServer();
     }
-    public int  anotherId=0;
+  public int  anotherId=0;
 
-    public int getAnotherId() {
+  public int getAnotherId() {
         return anotherId;
     }
 
-    public void setAnotherId(int anotherId) {
+  public void setAnotherId(int anotherId) {
         this.anotherId = anotherId;
     }
 
-    public static void setGameover(boolean gameover) {
+  public static void setGameover(boolean gameover) {
         Server.gameover = gameover;
     }
-    public void linkServer() {
+  public void linkServer() {
 //        name = chess.getNameField().getText();
         if (socket == null) {
             try {
